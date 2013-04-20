@@ -1,14 +1,16 @@
 " Make vim more useful
 set nocompatible
 
-" Set syntax highlighting options.
-set t_Co=256
-set background=dark
-syntax on
-colorscheme badwolf
-
-" Enabled later, after Pathogen
 filetype off
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
+
+ " Set syntax highlighting options.
+  se t_Co=256
+  set background=dark
+  syntax on
+  colorscheme solarized
+ 
 
 " Change mapleader
 let mapleader=","
@@ -88,7 +90,7 @@ set wildmenu " Hitting TAB in command mode will show possible completions above 
 set wildmode=list:longest " Complete only until point of ambiguity.
 set winminheight=0 "Allow splits to be reduced to a single line.
 set wrapscan " Searches wrap around end of file
-
+set clipboard=unnamedplus
 " Status Line
 " hi User1 guibg=#455354 guifg=fg      ctermbg=238 ctermfg=fg  gui=bold,underline cterm=bold,underline term=bold,underline
 " hi User2 guibg=#455354 guifg=#CC4329 ctermbg=238 ctermfg=196 gui=bold           cterm=bold           term=bold
@@ -222,8 +224,8 @@ set relativenumber " Use relative line numbers. Current line is still in status 
 au BufReadPost,BufNewFile * set relativenumber
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
+" call pathogen#runtime_append_all_bundles()
+" filetype plugin indent on
 
 " JSON
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
