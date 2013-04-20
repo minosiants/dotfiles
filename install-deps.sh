@@ -29,6 +29,10 @@ chmod +x ~/code/z/z.sh
 # also consider moving over your current .z file if possible. it's painful to rebuild :)
 
 
+#install https://github.com/Lokaltog/powerline.git
+
+
+
 # add this to the bash_profile file if it aint there.
 #   . ~/code/z/z.sh
 
