@@ -7,8 +7,9 @@ filetype plugin indent on
 
  " Set syntax highlighting options.
   se t_Co=256
+  syntax enable
   set background=dark
-  syntax on
+  let g:solarized_termtrans = 1
   colorscheme solarized
  
 
