@@ -17,14 +17,14 @@ sudo npm install -g nave
 
 # homebrew!
 # you need the code CLI tools YOU FOOL.
-sudo ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
+# sudo ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
 
 
 
 # https://github.com/rupa/z
 # z, oh how i love you
 mkdir -p ~/code/z
-curl https://raw.github.com/rupa/z/master/z.sh > ~/code/z/z.sh
+curl https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/code/z/z.sh
 chmod +x ~/code/z/z.sh
 # also consider moving over your current .z file if possible. it's painful to rebuild :)
 
