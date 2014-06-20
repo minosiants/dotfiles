@@ -57,4 +57,7 @@ sudo easy_install Pygments
 
 # chrome canary as default
 # on a mac you can set chrome canary as your default inside of Safari preferences :)
+#
 
+#https://github.com/tmuxinator/tmuxinator
+gem install tmuxinator
