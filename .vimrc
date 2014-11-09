@@ -2,15 +2,28 @@
 set nocompatible
 
 filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'rking/ag.vim'
+
+Plugin 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
  " Set syntax highlighting options.
-  se t_Co=256
-  syntax enable
-  set background=dark
-  let g:solarized_termtrans = 1
-  colorscheme solarized
+se t_Co=256
+syntax enable
+set background=dark 
+let g:solarized_termtrans = 1
+colorscheme solarized
  
 
 " Change mapleader
@@ -98,6 +111,11 @@ set clipboard=unnamedplus
 " set statusline=[%n]\ %1*%<%.99t%*\ %2*%h%w%m%r%*%y[%{&ff}→%{strlen(&fenc)?&fenc:'No\ Encoding'}]%=%-16(\ L%l,C%c\ %)%P
 let g:Powerline_symbols = 'fancy'
 
+
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+
+
 " Speed up viewport scrolling
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
@@ -118,7 +136,7 @@ map <C-L> <C-W>l
 noremap <leader>W :w !sudo tee %<CR>
 
 " Remap :W to :w
-command W w
+"command W w
 
 " Better mark jumping (line + col)
 nnoremap ' `
@@ -260,3 +278,4 @@ let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be inde
 
 " Rainbow Parenthesis
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
+
