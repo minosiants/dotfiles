@@ -1,0 +1,55 @@
+{
+    "segments": {
+        "left": [
+            {
+                "function": "powerline.segments.common.net.network_load"
+            },
+            {
+                "args": {
+                    "format": "{0:.0f}%",
+                    "interval": 2
+                },
+                "function": "powerline.segments.common.sys.cpu_load_percent"
+            }
+        ],
+        "right": [
+
+          {
+              "function": "powerline.segments.common.sys.cpu_load_percent"
+          },
+          {
+             "function": "powerline.segments.common.sys.system_load"
+          },
+            {
+                "function": "powerline.segments.common.sys.uptime",
+                "args": {
+                    "shorten_len": 2
+                },
+                "priority": 50
+            },
+            {
+                "function": "powerline.segments.common.time.date"
+            },
+            {
+                "args": {
+                    "format": "%H:%M",
+                    "istime": true
+                },
+                "function": "powerline.segments.common.time.date",
+                "name": "time"
+            },
+            {
+              
+                "function": "powerline.segments.common.net.internal_ip",
+                "priority": 50
+            },
+            {
+                "function": "powerline.segments.common.net.external_ip"
+            },
+            {
+                "function": "powerline.segments.common.net.hostname"
+            }
+
+        ]
+    }
+}
