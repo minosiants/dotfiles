@@ -3,27 +3,28 @@ set nocompatible
 
 filetype off
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'rking/ag.vim'
 
-Plugin 'bling/vim-airline'
-let g:airline_powerline_fonts = 1
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'bling/vim-airline'
+Plug 'rking/ag.vim'
+Plug 'mhinz/vim-startify'
+Plug 'arcticicestudio/nord-vim'
+Plug 'vim-airline/vim-airline-themes'
+" Check syntax in Vim
+Plug 'dense-analysis/ale'
 
-call pathogen#runtime_append_all_bundles()
+call plug#end()
+
 filetype plugin indent on
 
  " Set syntax highlighting options.
 se t_Co=256
 syntax enable
 set background=dark 
-let g:solarized_termtrans = 1
-colorscheme solarized
+" let g:solarized_termtrans = 1
+colorscheme  nord
  
 
 " Change mapleader
@@ -109,7 +110,7 @@ set clipboard=unnamedplus
 " hi User1 guibg=#455354 guifg=fg      ctermbg=238 ctermfg=fg  gui=bold,underline cterm=bold,underline term=bold,underline
 " hi User2 guibg=#455354 guifg=#CC4329 ctermbg=238 ctermfg=196 gui=bold           cterm=bold           term=bold
 " set statusline=[%n]\ %1*%<%.99t%*\ %2*%h%w%m%r%*%y[%{&ff}→%{strlen(&fenc)?&fenc:'No\ Encoding'}]%=%-16(\ L%l,C%c\ %)%P
-let g:Powerline_symbols = 'fancy'
+
 
 
 nmap <leader>d :NERDTreeToggle<CR>
@@ -278,4 +279,16 @@ let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be inde
 
 " Rainbow Parenthesis
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
-
+" Airline.vim {{{
+augroup airline_config
+  autocmd!
+  let g:airline_powerline_fonts = 1
+  let g:airline_enable_syntastic = 1
+  let g:airline#extensions#tabline#buffer_nr_format = '%s '
+  let g:airline#extensions#tabline#buffer_nr_show = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamecollapse = 0
+  let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline_theme='base16_nord'
+augroup END
+" }}}
