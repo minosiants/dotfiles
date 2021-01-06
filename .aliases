@@ -21,10 +21,6 @@ alias slt='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl  "$@"
 alias please=sudo
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
 
-# handy things
-alias bunyip='node ~/code/bunyip/cli.js'
-alias spotify="osascript ~/code/SpotifyControl/SpotifyControl.scpt"
-
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -119,3 +115,13 @@ done
 #haskel
 alias gh="stack ghci"
 
+# Git
+alias gst="git status"
+alias gb="git branch"
+alias gc="git checkout"
+alias gl="git log --oneline --decorate --color"
+alias commit="git add . && git commit -S -m"
+alias pop="git stash pop"
+alias pull="git pull"
+alias push="git push"
+alias stash="git stash -u"
