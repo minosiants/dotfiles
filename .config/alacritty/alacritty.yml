@@ -3,7 +3,7 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
@@ -11,7 +11,7 @@
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
-  #TERM: xterm-256color
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
@@ -35,7 +35,7 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 5
+    x: 2
     y: 0
 
   # Spread additional padding evenly around the terminal content.
@@ -61,7 +61,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Maximized
+  startup_mode: Fullscreen
 
   # Window title
   #title: Alacritty
@@ -99,6 +99,8 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #family: JetBrains Mono
+    #family: IBM Plex Sans Bold
+    #family: Hack Nerd Font  
     family: Monaco   
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -109,7 +111,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    #family: Hack Nerd Font
 
     # The `style` can be specified to pick a specific face.
     #style: Bold
@@ -307,10 +309,10 @@ colors:
 background_opacity: 1.0
 
 #selection:
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  #save_to_clipboard: false
+save_to_clipboard: false
 
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true
@@ -329,7 +331,7 @@ cursor:
   #unfocused_hollow: true
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
