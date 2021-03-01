@@ -27,34 +27,24 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sdiehl/vim-ormolu'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'liuchengxu/vista.vim'
-
-    " NerdTree https://github.com/preservim/nerdtree
-    Plug 'preservim/nerdtree'
+    "Racket support
+    Plug 'wlangstroth/vim-racket'
+    "Ranger file manager
+    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+    "fzf https://www.chrisatmachine.com/Neovim/08-fzf/
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'airblade/vim-rooter'
+    " colorizer    
+    Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 
+" Enable theming support
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 colorscheme nord
 
-
-" NerdTree {{{
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-"}}}
-
-
-" Airline.vim {{{
-augroup airline_config
-  autocmd!
-  let g:airline_powerline_fonts = 1
-  let g:airline_enable_syntastic = 1
-  let g:airline#extensions#tabline#buffer_nr_format = '%s '
-  let g:airline#extensions#tabline#buffer_nr_show = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#fnamecollapse = 0
-  let g:airline#extensions#tabline#fnamemod = ':t'
-  let g:airline_theme='base16_nord'
-augroup END
-" }}}
 
