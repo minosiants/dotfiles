@@ -12,6 +12,15 @@ export HISTCONTROL=ignoredups
 # saved for later analysis
 HISTTIMEFORMAT='%F %T '
 export HISTTIMEFORMAT
-
+export PATH=~/.bin:~/bin:~/.local/bin:$PATH
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+export GOPATH=$HOME/go
+export JAVA_HOME=$(/usr/libexec/java_home)
+export GRADLE_HOME=/Users/kaspar/stuff/gradle-2.4
+export PATH=$PATH:$GOPATH/bin:$GRADLE_HOME/bin
+export GPG_TTY=$(tty)
+
+# uses ripgrep - https://github.com/BurntSushi/ripgrep
+export FZF_DEFAULT_COMMAND='rg --files'
+
